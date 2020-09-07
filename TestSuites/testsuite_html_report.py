@@ -4,21 +4,15 @@ import sys
 sys.path.append(".")
 from Utils.HTMLTestRunner import *
 from TestCases.test_case_01 import HerokuAppLogin1
-from TestCases.test_case_02 import HerokuAppLogin2
-from TestCases.test_case_03 import HerokuAppLogin3
-from TestCases.test_case_04 import HerokuAppLogin4
 
 # get the directory path to output report file
 dir = os.getcwd()
 
 # get all tests from Login class
 login1 = unittest.TestLoader().loadTestsFromTestCase(HerokuAppLogin1)
-login2 = unittest.TestLoader().loadTestsFromTestCase(HerokuAppLogin2)
-login3 = unittest.TestLoader().loadTestsFromTestCase(HerokuAppLogin3)
-login4 = unittest.TestLoader().loadTestsFromTestCase(HerokuAppLogin4)
 
 # create a test suite
-test_suite = unittest.TestSuite([login1, login2, login3, login4])
+test_suite = unittest.TestSuite([login1])
 
 # open the report file
 outfile = open(dir + "/SeleniumPythonTestSummary.html", "w", encoding='utf-8')
