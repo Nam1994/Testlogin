@@ -3,13 +3,13 @@ import sys
 
 sys.path.append(".")
 from Utils.HTMLTestRunner import *
-from TestCases.test_case_01 import HerokuAppLogin1
+from TestCases.test_case_01 import SauDeMo
 
 # get the directory path to output report file
 dir = os.getcwd()
 
 # get all tests from Login class
-login1 = unittest.TestLoader().loadTestsFromTestCase(HerokuAppLogin1)
+login1 = unittest.TestLoader().loadTestsFromTestCase(SauDeMo)
 
 # create a test suite
 test_suite = unittest.TestSuite([login1])

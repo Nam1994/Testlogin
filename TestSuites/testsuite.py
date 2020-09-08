@@ -1,11 +1,11 @@
 import sys
+
 sys.path.append(".")
 import unittest
-from TestCases.test_case_01 import HerokuAppLogin1
-
+from TestCases.test_case_01 import SauDeMo
 
 # get all tests from Login class
-login1 = unittest.TestLoader().loadTestsFromTestCase(HerokuAppLogin1)
+login1 = unittest.TestLoader().loadTestsFromTestCase(SauDeMo)
 l
 
 # create a test suite
