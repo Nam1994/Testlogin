@@ -4,6 +4,7 @@ sys.path.append(".")
 import unittest
 from selenium import webdriver
 from Pages.login_page import LoginPage
+from Pages.product_page import ProductPage
 from TestCases.base_test import BaseTest
 from TestData.TestData import TestData
 
@@ -22,6 +23,10 @@ class SauDeMo(BaseTest):
     def test_login_successfully(self):
         login_page = LoginPage(self.driver)
         login_page.login(TestData.USERNAME, TestData.PASSWORD)
+        product_page = ProductPage(self.driver)
+        product_page.product_text()
+        self.assertTrue(product_page.product_text())
+        print(self.assertTrue(product_page.product_text()))
 
 
 if __name__ == "__main__":

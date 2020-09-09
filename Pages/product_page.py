@@ -19,3 +19,7 @@ class ProductPage(BasePage):
     def remove_add_to_cart(self, index):
         # print("Productpage:" + str(index))
         self.click(ProductLocators.REMOVE_TO_CART_BUTTON(index))
+
+    def product_text(self):
+        self.get_text(ProductLocators.LABEL_PRODUCT)
+        print(self.get_text(ProductLocators.LABEL_PRODUCT))
