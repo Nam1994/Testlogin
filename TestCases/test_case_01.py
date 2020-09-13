@@ -25,9 +25,7 @@ class SauDeMo(BaseTest):
         login_page.login(TestData.USERNAME, TestData.PASSWORD)
         product_page = ProductPage(self.driver)
         product_page.product_text()
-        self.assertTrue(product_page.product_text())
-        print(self.assertTrue(product_page.product_text()))
-
-
+        print(product_page.product_text())
+        self.assertEqual(product_page.product_text(), 'Products')
 if __name__ == "__main__":
     unittest.main()
