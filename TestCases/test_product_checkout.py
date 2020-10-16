@@ -28,20 +28,20 @@ class SauDemo(BaseTest):
         login_page = LoginPage(self.driver)
         login_page.login(TestData.USERNAME, TestData.PASSWORD)
         product_page = ProductPage(self.driver)
-        for index in enumerate (product_page.get_product_info(), start=1):
 
-            return
-        product_page.click_bag_icon()
-        time.sleep(2)
-        cart_page = CartPage(self.driver)
-        time.sleep(2)
-        cart_page.click_checkout()
-        checkout_step_one_page = CheckoutStepOne(self.driver)
-        checkout_step_one_page.addcode(TestData.FIRSTNAME, TestData.LASTNAME, TestData.ZIPCODE)
-        checkout_step_one_page.click_continute()
-        checkout_step_two_page = CheckoutStepTwo(self.driver)
-        checkout_step_two_page.click_finish_button()
-        time.sleep(3)
+        for index, excute_produce in enumerate (product_page.get_product_info(), start=1):
+
+            product_page.click_bag_icon()
+            time.sleep(2)
+            cart_page = CartPage(self.driver)
+            time.sleep(2)
+            cart_page.click_checkout()
+            checkout_step_one_page = CheckoutStepOne(self.driver)
+            checkout_step_one_page.addcode(TestData.FIRSTNAME, TestData.LASTNAME, TestData.ZIPCODE)
+            checkout_step_one_page.click_continute()
+            checkout_step_two_page = CheckoutStepTwo(self.driver)
+            checkout_step_two_page.click_finish_button()
+            time.sleep(3)
 
 
 if __name__ == "__main__":
